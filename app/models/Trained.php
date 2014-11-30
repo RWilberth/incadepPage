@@ -22,11 +22,14 @@ class Trained extends Ardent {
         parent::__construct($attributes);
 
         $this->purgeFilters[] = function($key) {
-                    $purge = array('father_last_name', 'mother_last_name','recaptcha_challenge_field', 'recaptcha_response_field');
+                    $purge = array('recaptcha_challenge_field', 'recaptcha_response_field');
                     return !in_array($key, $purge);
                 };
     }
 
+    public static $relationsData = array(
+        'training' => array(self::BELONGS_TO, 'training'),
+    );
     public static $rules = array(
         'mother_last_name' => 'required',
         'father_last_name' => 'required',
@@ -36,11 +39,6 @@ class Trained extends Ardent {
         'celphone' => 'required',
         'recaptcha_response_field' => 'required|recaptcha',
     );
-
-    public function beforeSave() {
-        $this->last_name = $this->father_last_name . " " . $this->mother_last_name;
-        return true;
-    }
 
     protected $table = "trained";
 

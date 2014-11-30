@@ -39,6 +39,14 @@
     {{Form::text('celphone', null, ['class'=>'form-control'])}}
 </div>
 <div class='form-group'>
+    {{Form::label('facebook', 'Facebook');}}
+    {{Form::text('facebook', null, ['class'=>'form-control'])}}
+</div>
+<div class='form-group'>
+    {{Form::label('twitter', 'Twitter');}}
+    {{Form::text('twitter', null, ['class'=>'form-control'])}}
+</div>
+<div class='form-group'>
     {{Form::label('training_id', 'capacitacion');}}
     {{Form::select('training_id',$trainings,null, ['class'=>'form-control'])}}
 </div>

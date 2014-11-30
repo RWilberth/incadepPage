@@ -25,7 +25,7 @@ class Training extends Ardent {
     );
 
     public function beforeSave() {
-        if ($this->url_image instanceof UploadedFile) {
+        if ($this->url_image instanceof Symfony\Component\HttpFoundation\File\UploadedFile) {
             if ($this->url_image->move(ServerConstants::TRAINING_IMG_PATH, $this->url_image->getClientOriginalName())) {
                 $this->url_image = $this->url_image->getClientOriginalName();
                 return true;

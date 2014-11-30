@@ -8,6 +8,7 @@
 {{HTML::script('extension/jQuery-File-Upload-9.8.0/js/vendor/jquery.ui.widget.js')}}
 @stop
 @section('content')
+<h2>Registro de taller</h2>
 <div class='row-fluid'>
     @if(isset($msjErrors))
     <div class="bg-danger text-danger error">
@@ -20,6 +21,7 @@
     @endif
     {{Form::open(array('url'=>'capacitacion/registro','method'=>'post', 'id'=>'fileupload','files'=>true))}}
     <div class='form-group'>
+    {{Form::label('url_image', 'Imagenes');}}
         <div class="row fileupload-buttonbar">
             <div class="col-lg-7">
                 <!-- The fileinput-button span is used to style the file input field as button -->
@@ -41,9 +43,11 @@
         </div>
     </div>
     <div class='form-group'>
+        {{Form::label('name', 'Nombre');}}
         {{Form::text('name',null, ['class'=>'form-control'])}}
     </div>
     <div class='form-group'>
+        {{Form::label('description', 'Descripción');}}
         {{Form::textarea('description', null, ['class'=>'form-control'])}}
     </div>
     <div class='form-group'>

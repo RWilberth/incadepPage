@@ -23,6 +23,9 @@ Route::group(array('before' => 'auth'), function() {
             Route::post('capacitacion/registro', 'TrainingController@store');
             Route::post('capacitacion/activar-desactivar', 'TrainingController@updateState');
             Route::get('usuario/logout', 'UserController@logout');
+            Route::get('admin/capacitados','TrainedController@admin');
+            Route::post('search/capacitados','TrainedController@search');
+            Route::delete('capacitados/{id}', 'TrainedController@delete');
         });
 Route::get('capacitacion', function() {
             return View::make('home.capacitacion', array('page' => UIConstants::ID_PAGE_CAPACITACION));

@@ -34,8 +34,7 @@ class TrainingController extends BaseController {
 
     public function updateState() {
         $model = Training::find(Input::get('id'));
-        var_dump($model->save());
-        var_dump($model->errors()->all());
+        $model->save();
     }
 
     public function store() {

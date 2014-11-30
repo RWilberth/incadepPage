@@ -50,6 +50,7 @@
                         <li class="{{$page==UIConstants::ID_PAGE_GALERIA?'active':''}}"><a href="{{url('galeria')}}">Galeria</a></li>
                         <li class="{{$page==UIConstants::ID_PAGE_CONTACTO?'active':''}}"><a href="{{url('contacto')}}">Contacto</a></li>
                         <li class="{{$page==UIConstants::ID_PAGE_REGISTRO?'active':''}}"><a href="{{url('capacitado/registro')}}">Registro</a></li>
+                        <li class=""><a href="{{url('admin/capacitados')}}">Administación de capacitados</a></li>
                         @if(Auth::check())
                             <li><a href="{{url('usuario/logout')}}">Cerrar session</a></li>
                         @endif
